@@ -51,6 +51,20 @@ body{
   .topnav .search-container button:hover {
     background: #ccc;
   }
+
+  #tophead  {
+    display:grid;
+  }
+  #tophead div{
+   width:280px;
+    word-wrap: break-word;
+    margin:4px 4px 4px 4px;
+    border: 2px;
+  }
+  #tophead div img{
+    width:250px;
+    height:200px;
+  }
   
   @media screen and (max-width: 600px) {
     .topnav .search-container {
