@@ -54,17 +54,15 @@ body{
 
   #tophead  {
     display:grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
   }
   #tophead div{
-   width:280px;
     word-wrap: break-word;
-    margin:4px 4px 4px 4px;
-    border: 2px;
+    overflow:hidden;
   }
-  #tophead div img{
-    width:250px;
-    height:200px;
-  }
+  
   
   @media screen and (max-width: 600px) {
     .topnav .search-container {
