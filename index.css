@@ -56,11 +56,13 @@ body{
     display:grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: 240px;
+    grid-auto-rows: auto;
   }
   #tophead div{
     word-wrap: break-word;
     overflow:hidden;
+    text-overflow:ellipsis
+    white-space: nowrap;
   }
   
   
