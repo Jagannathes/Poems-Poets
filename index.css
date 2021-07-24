@@ -63,6 +63,10 @@ body{
     overflow:hidden;
     text-overflow:ellipsis
     white-space: nowrap;
+    box-sizing: border-box;
+    border: 20px solid #969696;
+    background: #d9dbda;
+    margin: 10px;
   }
   
   
@@ -82,3 +86,4 @@ body{
       border: 1px solid #ccc;  
     }
   }
+
