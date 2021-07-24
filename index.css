@@ -68,6 +68,8 @@ body{
     border: 20px solid #969696;
     background: #d9dbda;
     cursor:pointer;
+    border-radius: 4px;
+    
   }
   
   

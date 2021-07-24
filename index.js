@@ -11,7 +11,7 @@ async function onLoad(){
     for(let i=0, n = poem; i < poem.length;i++)
 	{
 
-     newsCard = newsCard+"<div><h4>"+n[i].title+"</h4><h5>"+n[i].author+"</h5>";
+     newsCard = newsCard+"<div onclick=\"window.location=\'result.html?"+n[i].title+"\';\"><h4>"+n[i].title+"</h4><h5>"+n[i].author+"</h5>";
      //  loop for iterating through the first 4 lines of the poem and adding them to newsCard variable 
 
      for(let j=0, m=n[i].lines; j<Math.min(4,n[i].lines.length);j++){
