@@ -25,6 +25,7 @@ async function onLoad(){
     // selecting  HTML div based on its ID and changing its content to that of newsCard variable 
     tophead=document.getElementById("tophead")
     tophead.innerHTML=newsCard;
+    // removes the division containing loading animation 
     document.getElementById("loader").remove();
 }
 
