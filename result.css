@@ -28,6 +28,8 @@ main{
     animation: d6 1s infinite;
     }
     
+      
+    
     @keyframes d6{ 
       50%,100% {background-position: 100% 100%,50% 0,0 100%} 
     }

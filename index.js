@@ -55,7 +55,7 @@ const drawListPoems = async () => {
          }
     
     
-         result+="</div>"
+         result+="</div></a>"
         }  
         result+="</div>"
         
