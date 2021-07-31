@@ -5,8 +5,11 @@ console.log(Url)
 let params = (new URL(Url)).searchParams
  var title = params.get('title')
 let _poem = await fetch("https://poetrydb.org/title/"+title+":abs")
+var poem = await _poem.json()
+console.log(_poem)
+if(poem.status != 404 ){
 console.log(title)
-let poem = await _poem.json()
+
 console.log(poem)
 var poemCard = "<h2>"+poem[0].title+"</h2>"
 for(let j=0, m=poem[0].lines; j<poem[0].linecount;j++){
@@ -15,5 +18,10 @@ for(let j=0, m=poem[0].lines; j<poem[0].linecount;j++){
  tophead=document.getElementById("main")
  tophead.innerHTML=poemCard;
  document.getElementById("loader").remove();
+}
+else{
+   let nfp = document.getElementById("loader")
+   nfp.innerHTML = "<h2>Page not found</h2>"
+}
 }
 onload();
