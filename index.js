@@ -4,6 +4,7 @@ var newsCard = "<h2>Randam Picks</h2><div class =\'random\'>"
 async function onLoad(){
     //fetching information about 20 random poems from poetrydb API and convertig to json 
     let _poem = await fetch("https://poetrydb.org/random/20")
+    
     let poem = await _poem.json()
     console.log(poem)
     //variable for storing the content to be displayed in HTML
@@ -28,6 +29,8 @@ async function onLoad(){
     tophead.innerHTML=newsCard;
     // removes the division containing loading animation 
     document.getElementById("loader").remove();
+
+    
 }
 
 onLoad(); 
@@ -35,7 +38,7 @@ var searchPoems = document.getElementById("search");
 const drawListPoems = async () => {
     if(searchPoems.value!= ""){
         let resultDiv=document.getElementById("tophead")
-        resultDiv="<div class = \"loadresult\"><div>"+newsCard;
+        resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><div class = \"dots-9\" id = \"dots-9\"></div><br><br></div>"+newsCard;
         let _poem = await fetch('https://poetrydb.org/title/'+searchPoems.value)
         let poem = await _poem.json()
         console.log(poem);
@@ -44,7 +47,7 @@ const drawListPoems = async () => {
         for(let i=0, n = poem; i < Math.min(6,poem.length);i++)
         {
     
-         result =  result+"<div><h4><a href ='result.html?title="+n[i].title+"\'>"+n[i].title+"</a></h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
+         result =  result+"<a href ='result.html?title="+n[i].title+"\'><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
          //  loop for iterating through the first 4 lines of the poem and adding them to newsCard variable 
     
          for(let j=0, m=n[i].lines; j<Math.min(2,n[i].lines.length);j++){
@@ -55,7 +58,8 @@ const drawListPoems = async () => {
          result+="</div>"
         }  
         result+="</div>"
-        resultDiv=document.getElementById("tophead")
+        
+        
         resultDiv.innerHTML = "<h2>Results</h2>"+result+newsCard;               
     }
 }
