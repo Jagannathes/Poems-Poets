@@ -11,7 +11,7 @@ async function onLoad(){
     for(let i=0, n = poem; i < poem.length;i++)
 	{
 
-     newsCard = newsCard+"<a href ='result.html?"+n[i].title+"\'><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
+     newsCard = newsCard+"<a href ='result.html?title="+n[i].title+"\'><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
      //  loop for iterating through the first 4 lines of the poem and adding them to newsCard variable 
 
      for(let j=0, m=n[i].lines; j<Math.min(2,n[i].lines.length);j++){
@@ -44,7 +44,7 @@ const drawListPoems = async () => {
         for(let i=0, n = poem; i < Math.min(6,poem.length);i++)
         {
     
-         result =  result+"<div><h4><a href ='result.html?"+n[i].title+"\'>"+n[i].title+"</a></h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
+         result =  result+"<div><h4><a href ='result.html?title="+n[i].title+"\'>"+n[i].title+"</a></h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
          //  loop for iterating through the first 4 lines of the poem and adding them to newsCard variable 
     
          for(let j=0, m=n[i].lines; j<Math.min(2,n[i].lines.length);j++){
