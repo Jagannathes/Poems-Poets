@@ -41,7 +41,7 @@ const drawListPoems = async () => {
         resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><br><br><div class = \"dots-9\" id = \"dots-9\"></div><br><br><br><br></div>"+newsCard;
         let _poem = await fetch('https://poetrydb.org/title/'+searchPoems.value)
         let poem = await _poem.json()
-        if(poem.ok){
+        if(poem.status!=404){
              console.log(poem);
              //variable for storing the content to be displayed in HTML
              let result = "<div class =\'result\'>"
