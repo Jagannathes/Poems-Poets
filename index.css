@@ -165,7 +165,7 @@ width:100%;
   .topnav .search-container {
     float: none;
   }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
+  .topnav a,  .topnav .search-container button {
     float: none;
     display: block;
     text-align: center;
@@ -175,6 +175,12 @@ width:100%;
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;  
-    size: 20px;
+    font-size: 20px;
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
   }
 }

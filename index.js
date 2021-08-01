@@ -38,7 +38,7 @@ var searchPoems = document.getElementById("search");
 const drawListPoems = async () => {
     if(searchPoems.value!= ""){
         let resultDiv=document.getElementById("tophead")
-        resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><div class = \"dots-9\" id = \"dots-9\"></div><br><br></div>"+newsCard;
+        resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><br><br><div class = \"dots-9\" id = \"dots-9\"></div><br><br><br><br></div>"+newsCard;
         let _poem = await fetch('https://poetrydb.org/title/'+searchPoems.value)
         let poem = await _poem.json()
         console.log(poem);
