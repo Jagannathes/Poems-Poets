@@ -87,4 +87,4 @@ const debounce = (fn, time, to = 0) => {
   };
 
   
-searchPoems.addEventListener("input", () => debounce(drawListPoems, 1000));
+searchPoems.addEventListener("input", () => debounce(drawListPoems, 3000));
