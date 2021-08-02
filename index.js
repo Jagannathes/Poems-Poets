@@ -1,5 +1,5 @@
 //const fetch = require("node-fetch");
-var newsCard = "<h2>Random Picks</h2><div class =\'random\'>"
+var newsCard = "<br><h2>Random Picks</h2><br><div class =\'random\'>"
 // this function will be called once the homepage is loaded
 async function onLoad(){
     //fetching information about 20 random poems from poetrydb API and convertig to json 
@@ -40,12 +40,20 @@ const drawListPoems = async () => {
         let resultDiv=document.getElementById("tophead")
         resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><br><br><div class = \"dots-9\" id = \"dots-9\"></div><br><br><br><br></div>"+newsCard;
         let _poem = await fetch('https://poetrydb.org/title/'+searchPoems.value)
+        let _poemA = await fetch('https://poetrydb.org/author/'+searchPoems.value)
         let poem = await _poem.json()
-        if(poem.status!=404){
-             console.log(poem);
+        let poemA = await _poemA.json()
+     if(poem.status!=404&&poemA.status!=404)  var resPoem =  {...poemA,...poem}
+     else if(poem.status!=404)var resPoem = poem
+     else var resPoem = poemA
+       
+        console.log(resPoem)
+        console.log(resPoem.length)
+        if(poem.status!=404||poemA.status!=404){
+            
              //variable for storing the content to be displayed in HTML
              let result = "<div class =\'result\'>"
-             for(let i=0, n = poem; i < Math.min(6,poem.length);i++)
+             for(let i=0, n = resPoem; i < Math.min(15,Object.keys(resPoem).length);i++)
              {
     
                   result =  result+"<a href ='result.html?title="+n[i].title+"\'><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
@@ -62,7 +70,7 @@ const drawListPoems = async () => {
              result+="</div>"
         
         
-             resultDiv.innerHTML = "<h2>Results</h2>"+result+newsCard;    }
+             resultDiv.innerHTML = "<br><h2>Results</h2><br>"+result+newsCard;    }
         else 
         {
             resultDiv.innerHTML="<div id = \"sload\" class = \"sload\"><br><br><br><br><h3>Sorry, no relevant results were found </h3><br><br><br><br></div>"+newsCard;
