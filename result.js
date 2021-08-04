@@ -1,3 +1,4 @@
+
 async function onload(){
 var Url = await window.location.href;
 // readsd the current page url and stores its as a string variable
@@ -11,10 +12,11 @@ if(poem.status != 404 ){
 console.log(title)
 
 console.log(poem)
-var poemCard = "<h2>"+poem[0].title+"</h2>"
-for(let j=0, m=poem[0].lines; j<poem[0].linecount;j++){
+var poemCard = `<br><h2>${poem[0].title}</h2><br><h4>${poem[0].author.toUpperCase()}</h4><br><div>`
+for(let j=0, m=poem[0].lines; j<poem[0].lines.length;j++){
     poemCard = poemCard+m[j]+"<br>";
  }
+ poemCard+="</div>"
  tophead=document.getElementById("main")
  tophead.innerHTML=poemCard;
  document.getElementById("loader").remove();
@@ -23,5 +25,11 @@ else{
    let nfp = document.getElementById("loader")
    nfp.innerHTML = "<h2>Page not found</h2>"
 }
+return;
 }
+if ("serviceWorker" in navigator) {
+   // register service worker
+   navigator.serviceWorker.register("service-worker.js");
+ }
 onload();
+

@@ -32,7 +32,10 @@ async function onLoad(){
 
     
 }
-
+if ("serviceWorker" in navigator) {
+    // register service worker
+    navigator.serviceWorker.register("service-worker.js");
+  }
 onLoad(); 
 var searchPoems = document.getElementById("search");
 const drawListPoems = async () => {
@@ -56,7 +59,7 @@ const drawListPoems = async () => {
              for(let i=0, n = resPoem; i < Math.min(15,Object.keys(resPoem).length);i++)
              {
     
-                  result =  result+"<a href ='result.html?title="+n[i].title+"\'><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
+                  result =  result+"<a href = result.html?title="+n[i].title.replaceAll(" ","%20")+"><div><h4>"+n[i].title+"</h4><h5>BY "+n[i].author.toUpperCase()+"</h5>";
                   //  loop for iterating through the first 4 lines of the poem and adding them to newsCard variable 
     
                   for(let j=0, m=n[i].lines; j<Math.min(2,n[i].lines.length);j++)
@@ -86,5 +89,3 @@ const debounce = (fn, time, to = 0) => {
     to ? clearTimeout(to) : (to = setTimeout(drawListPoems, time));
   };
 
-  
-searchPoems.addEventListener("input", () => debounce(drawListPoems, 3000));

@@ -4,6 +4,18 @@ body{
 .main{
     width:100%;
     text-align: center;
+    height:90%;
+    font-size: xx-large;
+
+}
+.bottm{
+  width:100%;
+  height:10%;
+  border-style:groove;
+  border-color: black;
+  align-items: center;
+  
+  bottom:0;
 }
 .loader{
     position: fixed;
