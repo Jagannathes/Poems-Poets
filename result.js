@@ -12,7 +12,7 @@ if(poem.status != 404 ){
 console.log(title)
 
 console.log(poem)
-var poemCard = `<br><h2>${poem[0].title}</h2><br><h4>${poem[0].author.toUpperCase()}</h4><br><div>`
+var poemCard = `<br><h3>${poem[0].title}</h3><h4>${poem[0].author.toUpperCase()}</h4><br><div>`
 for(let j=0, m=poem[0].lines; j<poem[0].lines.length;j++){
     poemCard = poemCard+m[j]+"<br>";
  }

@@ -1,11 +1,12 @@
 body{
-  margin: 0 !important;
+  margin-left: 1px;
+  margin-right:1px:
 }
 .main{
     width:100%;
     text-align: center;
     height:90%;
-    font-size: large;
+    font-size: medium;
 
 }
 .bottm{
