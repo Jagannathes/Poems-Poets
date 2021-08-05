@@ -89,3 +89,4 @@ const debounce = (fn, time, to = 0) => {
     to ? clearTimeout(to) : (to = setTimeout(drawListPoems, time));
   };
 
+  searchPoems.addEventListener("input", () => debounce(drawListPoems, 1000));
