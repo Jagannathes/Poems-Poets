@@ -160,7 +160,7 @@ animation: d6 1s infinite;
   height:100%;
 }
 .column2{
-width:100%;
+width:100vw;
 }
 @media screen and (max-width: 600px) {
   .topnav .search-container {
